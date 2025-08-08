@@ -8,76 +8,89 @@
   box-sizing: border-box;
   list-style: none;
   text-decoration: none;
-  scroll-padding-top: 2rem;
   scroll-behavior: smooth;
 }
 
-/* Variables */
 :root {
-  --primary-color: #ff6347;
-  --text-color: #141111;
-  --bg-color: #f8f8f8;
-  --main-color: #ff6347; /* Added to avoid undefined variable in header */
+  --bg-color: #000;        /* Black background */
+  --main-color: #39ff14;   /* Fluorescent green */
 }
 
-/* General */
+/* Body */
 body {
   background-color: var(--bg-color);
-  color: var(--text-color);
 }
 
 /* Header */
 header {
   position: fixed;
-  width: 100%;
   top: 0;
-  right: 0;
-  z-index: 1000;
+  left: 0;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px 100px;
-  transition: 0.5s;
   background: var(--main-color);
+  z-index: 1000;
 }
 
 /* Logo */
 .logo {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--bg-color);
+  font-size: 1.3rem;
+  font-weight: 700; /* Bold */
+  color: #000;
   display: flex;
   align-items: center;
-  column-gap: 0.5rem;
+  gap: 0.5rem;
+  margin-right: auto; /* Push to extreme left */
+}
+
+.logo .bx {
+  font-size: 1.5rem;
 }
 
 /* Navbar */
-.navbar li {
-  display: inline-block;
-  margin-left: 20px;
+.navbar {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  gap: 50px; /* Equal spacing */
 }
 
 .navbar a {
-  color: var(--bg-color);
-  font-weight: 500;
+  color: #000;
+  font-weight: 700; /* Bold */
+  position: relative;
+  padding-bottom: 4px;
   transition: color 0.3s;
 }
 
-.navbar a:hover {
-  color: #fff;
+.navbar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #000;
+  transition: width 0.3s ease-in-out;
 }
 
-/* Sign in Button */
+.navbar a:hover::after {
+  width: 100%;
+}
+
+/* Sign In Button */
 .btn {
-  background: #fff;
-  color: var(--main-color);
+  background: red;
+  color: white;
   padding: 8px 16px;
   border-radius: 5px;
-  font-weight: 600;
-  transition: background 0.3s, color 0.3s;
+  font-weight: 700; /* Bold */
+  transition: background 0.3s;
 }
 
 .btn:hover {
-  background: var(--primary-color);
-  color: #fff;
+  background: darkred;
 }
