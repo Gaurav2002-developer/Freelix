@@ -16,3 +16,7 @@
     --text-color: #141111;
     --bg-color: #f8f8f8;
 }
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
