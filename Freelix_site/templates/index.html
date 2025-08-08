@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,29 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FREELIX</title>
 
-    <link rel="stylesheet" href="style.css" />
-    <!--box icons-->
+    <!-- External CSS (Django Static) -->
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/style.css' %}" />
+
+    <!-- CDN CSS -->
     <link
-      rel="stylesheet" type="text/css" href = "assets/style.css"
+      rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
     />
   </head>
   <body>
-    <!--navbar-->
+    <!-- Navbar -->
     <header>
-      <a href="#" class="logo"><i class="bx bxs-movie"></i>
-        FREELIX
-      </a>
+      <a href="#" class="logo"><i class="bx bxs-movie"></i> FREELIX</a>
       <div class="bx bx-menu" id="menu-icon"></div>
 
-      <!--Menu-->
+      <!-- Menu -->
       <ul class="navbar">
         <li><a href="#home">Home</a></li>
         <li><a href="#movies">Movies</a></li>
-        <li><a href="#tv series">TV Series</a></li>
+        <li><a href="#tvseries">TV Series</a></li>
         <li><a href="#newsletter">Newsletter</a></li>
       </ul>
-      <a href="#" c;ass="btn">SIGN IN</a>
+      <a href="#" class="btn">SIGN IN</a>
     </header>
   </body>
 </html>
