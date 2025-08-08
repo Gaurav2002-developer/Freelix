@@ -20,3 +20,24 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
 }
+header{
+    position:fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:: 20px 100px;
+    transition: 0.5s;
+    background: var(--main-color);
+}
+logo{
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+}
