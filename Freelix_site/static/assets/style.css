@@ -109,3 +109,11 @@ header {
   object-fit: cover; /* Fill the container nicely */
   max-height: 100vh; /* Optional: restrict max height */
 }
+.home-text {
+  text-align: center;
+}
+
+.home-text .btn {
+  margin: 0 auto;
+  display: inline-block;
+}
