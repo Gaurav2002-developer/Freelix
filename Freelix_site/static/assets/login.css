@@ -71,3 +71,18 @@ body {
 .login-form input:focus {
   box-shadow: 0 0 6px #e74c3c;
 }
+/* Signup text */
+.signup-text {
+  margin-top: 15px;
+  font-size: 0.95rem;
+  color: #fff;
+}
+.signup-link {
+  color: #e74c3c;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signup-link:hover {
+  text-decoration: underline;
+}
