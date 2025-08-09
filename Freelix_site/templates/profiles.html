@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FREELIX - Profile</title>
+
+    <!-- Boxicons CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+
+    <!-- Your Custom CSS -->
+    <link rel="stylesheet" href="{% static 'assets/profile.css' %}" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header>
+      <a href="#" class="logo"><i class="bx bxs-movie"></i> FREELIX</a>
+
+      <ul class="navbar">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'movies' %}">Movies</a></li>
+        <li><a href="{% url 'tvseries' %}">TV Series</a></li>
+        <li><a href="{% url 'newsletter' %}">Newsletter</a></li>
+      </ul>
+      <a href="{% url 'logout' %}" class="btn">Logout</a>
+    </header>
+
+    <!-- Profile Section -->
+    <section id="profile" style="padding: 100px 20px 40px; max-width: 600px; margin: auto; color: white;">
+      <h2 style="margin-bottom: 30px; text-align: center;">User Profile</h2>
+
+      <div class="profile-field">
+        <label>Name:</label>
+        <span>{{ user.first_name|default:"Not set" }}</span>
+        <a href="{% url 'edit_name' %}" class="edit-btn">Edit</a>
+      </div>
+
+      <div class="profile-field">
+        <label>Email:</label>
+        <span>{{ user.email|default:"Not set" }}</span>
+        <a href="{% url 'edit_email' %}" class="edit-btn">Edit</a>
+      </div>
+
+      <div class="profile-field">
+        <label>Username:</label>
+        <span>{{ user.username }}</span>
+        <a href="{% url 'edit_username' %}" class="edit-btn">Edit</a>
+      </div>
+
+      <div class="profile-field">
+        <label>Password:</label>
+        <span>********</span>
+        <a href="{% url 'change_password' %}" class="edit-btn">Edit</a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="copyright">&#169; 2025 FREELIX. All rights reserved.</div>
+    </footer>
+  </body>
+</html>

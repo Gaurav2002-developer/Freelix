@@ -2,7 +2,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-image: url("https://i.pinimg.com/736x/ed/d1/69/edd169fa49c08f15f4b8ef72e87d6ab5.jpg");
+  background-image: url("https://wallpapers.com/images/hd/movie-poster-background-p5qblffj7cvswl5g.jpg");
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -70,4 +70,19 @@ body {
 /* Input focus */
 .login-form input:focus {
   box-shadow: 0 0 6px #e74c3c;
+}
+/* Signup text */
+.signup-text {
+  margin-top: 15px;
+  font-size: 0.95rem;
+  color: #fff;
+}
+.signup-link {
+  color: #e74c3c;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signup-link:hover {
+  text-decoration: underline;
 }

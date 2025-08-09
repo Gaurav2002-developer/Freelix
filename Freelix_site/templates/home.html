@@ -28,12 +28,13 @@
       <a href="#" class="logo"><i class="bx bxs-movie"></i> FREELIX</a>
 
       <ul class="navbar">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#movies">Movies</a></li>
-        <li><a href="#tvseries">TV Series</a></li>
-        <li><a href="#newsletter">Newsletter</a></li>
+        <li><a href="{% url 'login' %}">Home</a></li>
+
+        <li><a href="{% url 'login' %}">Movies</a></li>
+        <li><a href="{% url 'login' %}">TV Series</a></li>
+        <li><a href="{% url 'login' %}">Newsletter</a></li>
       </ul>
-      <a href="#" class="btn">MY ACCOUNT</a>
+      <a href="{% url 'login' %}" class="btn">MY ACCOUNT</a>
     </header>
 
     <!-- Home Section with Swiper -->
@@ -41,29 +42,33 @@
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
           <!-- Slide 1 -->
+
           <div class="swiper-slide">
             <div class="container">
               <img
-                src="https://images7.alphacoders.com/518/518783.jpg"
-                alt="Inception Background"
+                src="https://4kwallpapers.com/images/wallpapers/ballerina-movie-2560x1080-22626.jpg"
+                alt="Ballerina Background"
               />
               <div class="home-text">
-                <h1>INCEPTION</h1>
-                <a href="#"><button class="btn">Watch Now</button></a>
+                <h1>John Wick: Ballerina</h1>
+                <a href="{% url 'login' %}"
+                  ><button class="btn">Watch Now</button></a
+                >
               </div>
             </div>
           </div>
-
           <!-- Slide 2 -->
           <div class="swiper-slide">
             <div class="container">
               <img
-                src="https://w0.peakpx.com/wallpaper/736/769/HD-wallpaper-movie-no-country-for-old-men.jpg"
-                alt="No Country For Old Men Background"
+                src="https://images8.alphacoders.com/139/1392357.jpg"
+                alt="superman Background"
               />
               <div class="home-text">
-                <h1>No Country For Old Man</h1>
-                <a href="#"><button class="btn">Watch Now</button></a>
+                <h1>DC Studios: Superman</h1>
+                <a href="{% url 'login' %}"
+                  ><button class="btn">Watch Now</button></a
+                >
               </div>
             </div>
           </div>
@@ -77,7 +82,69 @@
               />
               <div class="home-text">
                 <h1>F1: The Movie</h1>
-                <a href="#"><button class="btn">Watch Now</button></a>
+                <a href="{% url 'login' %}"
+                  ><button class="btn">Watch Now</button></a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Slide 4 -->
+          <div class="swiper-slide">
+            <div class="container">
+              <img
+                src="https://wallpapers.com/images/hd/grunge-yellow-breaking-bad-poster-bkbu0hjpevu9ouog.jpg"
+                alt="Breaking Bad Background"
+              />
+              <div class="home-text">
+                <h1>Breaking Bad</h1>
+                <a href="{% url 'login' %}"
+                  ><button class="btn">Watch Now</button></a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Slide 5 -->
+          <div class="swiper-slide">
+            <div class="container">
+              <img
+                src="https://wallpapers.com/images/featured/peaky-blinders-mf0te5aaoy07nn99.jpg"
+                alt="Peaky blinders Background"
+              />
+              <div class="home-text">
+                <h1>Peaky Blinders</h1>
+                <a href="{% url 'login' %}"
+                  ><button class="btn">Watch Now</button></a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Slide 6 -->
+          <div class="swiper-slide">
+            <div class="container">
+              <img
+                src="https://w0.peakpx.com/wallpaper/736/769/HD-wallpaper-movie-no-country-for-old-men.jpg"
+                alt="No Country For Old Men Background"
+              />
+              <div class="home-text">
+                <h1>No Country For Old Man</h1>
+                <a href="{% url 'login' %}"
+                  ><button class="btn">Watch Now</button></a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Slide 7 -->
+          <div class="swiper-slide">
+            <div class="container">
+              <img
+                src="https://wallpapers.com/images/featured/how-i-met-your-mother-c5q25citg8k2p38p.jpg"
+                alt="how i met your mother Background"
+              />
+              <div class="home-text">
+                <h1>How I Met Your Mother</h1>
+                <a href="{% url 'login' %}"
+                  ><button class="btn">Watch Now</button></a
+                >
               </div>
             </div>
           </div>

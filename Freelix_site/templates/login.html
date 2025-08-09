@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>FREELIX Login</title>
-    <link rel="stylesheet" href="{% static 'css/login.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/login.css' %}" />
   </head>
   <body>
     <div class="login-container">
@@ -18,12 +18,12 @@
       >
         {% csrf_token %}
 
-        <label for="id_email">Email Address</label>
+        <label for="username">Username</label>
         <input
-          type="email"
-          id="id_email"
-          name="email"
-          placeholder="Enter your email"
+          type="username"
+          id="id_username"
+          name="username"
+          placeholder="Enter your username"
           value="{{ request.POST.email|default:'' }}"
           required
         />
@@ -35,6 +35,7 @@
         <input
           type="password"
           id="id_password"
+          .
           name="password"
           placeholder="Enter password (min 8 chars)"
           minlength="8"
@@ -43,8 +44,13 @@
         {% if form.password.errors %}
         <div class="error">{{ form.password.errors.0 }}</div>
         {% endif %}
-
         <button type="submit" class="btn-signin">Sign In</button>
+
+        <p class="signup-text">
+          New Member?<a href="{% url 'signup' %}" class="signup-link"
+            >Sign Up</a
+          >
+        </p>
       </form>
     </div>
   </body>

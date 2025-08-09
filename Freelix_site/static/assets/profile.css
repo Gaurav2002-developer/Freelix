@@ -1,0 +1,44 @@
+/* Profile page fields */
+#profile {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  padding: 40px 30px;
+  box-shadow: 0 0 15px rgba(229, 9, 20, 0.8);
+}
+
+.profile-field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.profile-field label {
+  font-weight: 700;
+  width: 120px;
+}
+
+.profile-field span {
+  flex-grow: 1;
+  padding-left: 10px;
+  color: #eee;
+  font-style: italic;
+}
+
+.edit-btn {
+  background-color: #e50914;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  transition: background-color 0.3s;
+  margin-left: 15px;
+  white-space: nowrap;
+}
+
+.edit-btn:hover {
+  background-color: #b00610;
+}
