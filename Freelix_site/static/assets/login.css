@@ -1,0 +1,73 @@
+/* Background with full cover */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: url("https://i.pinimg.com/736x/ed/d1/69/edd169fa49c08f15f4b8ef72e87d6ab5.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container box */
+.login-container {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  width: 320px;
+  text-align: center;
+  color: white;
+}
+
+/* Site name */
+.site-name {
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  letter-spacing: 3px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Form elements */
+.login-form label {
+  display: block;
+  text-align: left;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+}
+
+/* Sign-in button */
+.btn-signin {
+  background-color: #e74c3c; /* bright red */
+  color: white;
+  border: none;
+  padding: 12px 0;
+  width: 100%;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-signin:hover {
+  background-color: #c0392b; /* darker red on hover */
+}
+
+/* Input focus */
+.login-form input:focus {
+  box-shadow: 0 0 6px #e74c3c;
+}
