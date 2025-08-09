@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FREELIX Login</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}" />
+  </head>
+  <body>
+    <div class="login-container">
+      <h1 class="site-name">FREELIX</h1>
+      <form
+        method="post"
+        action="{% url 'login' %}"
+        class="login-form"
+        novalidate
+      >
+        {% csrf_token %}
+
+        <label for="id_email">Email Address</label>
+        <input
+          type="email"
+          id="id_email"
+          name="email"
+          placeholder="Enter your email"
+          value="{{ request.POST.email|default:'' }}"
+          required
+        />
+        {% if form.email.errors %}
+        <div class="error">{{ form.email.errors.0 }}</div>
+        {% endif %}
+
+        <label for="id_password">Password</label>
+        <input
+          type="password"
+          id="id_password"
+          name="password"
+          placeholder="Enter password (min 8 chars)"
+          minlength="8"
+          required
+        />
+        {% if form.password.errors %}
+        <div class="error">{{ form.password.errors.0 }}</div>
+        {% endif %}
+
+        <button type="submit" class="btn-signin">Sign In</button>
+      </form>
+    </div>
+  </body>
+</html>
