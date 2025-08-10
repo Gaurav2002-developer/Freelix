@@ -34,10 +34,10 @@ def signup(request):
             return redirect('login')
         
         elif User.objects.filter(email=email).exists():
-            messages.info(request, "Email Already Taken !")
+            messages.info(request, "Email Already Registered !")
             return redirect("signup")
         elif User.objects.filter(username=username).exists():
-            messages.info(request, "Username Already Taken !")
+            messages.info(request, "Username Already Registered !")
             return redirect("signup")
 
         
@@ -56,4 +56,7 @@ def signup(request):
 
 def home(request):
     return render(request, 'home.html')
+
+def profile(request):
+    return render(request, 'profile.html')
 # Create your views here.

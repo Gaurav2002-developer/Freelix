@@ -36,7 +36,7 @@
 
       <div class="profile-field">
         <label>Name:</label>
-        <span>{{ user.first_name|default:"Not set" }}</span>
+        <span>{{ user.fullname|default:"Not set" }}</span>
         <a href="{% url 'edit_name' %}" class="edit-btn">Edit</a>
       </div>
 
@@ -54,7 +54,7 @@
 
       <div class="profile-field">
         <label>Password:</label>
-        <span>********</span>
+        <span>{{ user.password }}</span>
         <a href="{% url 'change_password' %}" class="edit-btn">Edit</a>
       </div>
     </section>
