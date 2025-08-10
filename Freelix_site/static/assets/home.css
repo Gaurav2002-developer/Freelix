@@ -13,10 +13,8 @@
 
 :root {
   --bg-color: #020302;
-  --main-color: transparent;
 }
 
-/* Body and section */
 body {
   background-color: var(--bg-color);
   color: white;
@@ -26,7 +24,7 @@ section {
   padding: 4.5rem 0 1.5rem;
 }
 
-/* Header styling */
+/* Header layout */
 header {
   position: fixed;
   top: 0;
@@ -34,14 +32,13 @@ header {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: 20px 100px;
-  background: rgba(0, 0, 0, 0.5); /* translucent black */
-  backdrop-filter: blur(8px); /* blur behind navbar */
-  -webkit-backdrop-filter: blur(8px); /* Safari support */
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
   z-index: 1000;
 }
 
+/* Logo to the far left */
 .logo {
   font-size: 1.3rem;
   font-weight: 700;
@@ -49,18 +46,17 @@ header {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-right: auto;
 }
 
 .logo .bx {
   font-size: 1.5rem;
 }
 
+/* Center nav */
 .navbar {
   display: flex;
-  justify-content: center;
-  flex: 1;
-  gap: 50px;
+  gap: 60px;
+  margin: 0 auto;
 }
 
 .navbar a {
@@ -68,7 +64,6 @@ header {
   font-weight: 700;
   position: relative;
   padding-bottom: 4px;
-  transition: color 0.3s;
 }
 
 .navbar a::after {
@@ -86,6 +81,61 @@ header {
   width: 100%;
 }
 
+/* Right side with search + button */
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Search Bar beside button */
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 50px;
+  padding: 5px;
+  height: 35px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  width: 40px; /* collapsed */
+}
+
+.search-box:hover {
+  width: 180px; /* expanded */
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.search-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  padding-left: 10px;
+  font-size: 14px;
+  flex: 1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.search-box:hover .search-input {
+  opacity: 1;
+}
+
+.search-icon {
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  min-width: 20px;
+}
+
+/* Button styling */
 .btn {
   background: red;
   color: black;
@@ -101,44 +151,36 @@ header {
   background: darkred;
 }
 
-/* Swiper container styling */
-/* Swiper container styling */
+/* Swiper container */
 .container {
   width: 100%;
-  height: 100vh; /* Change min-height to full viewport height */
+  height: 100vh;
   position: relative;
   display: flex;
-  align-items: center; /* Vertical center */
-  justify-content: flex-start; /* Align left */
+  align-items: center;
   padding-left: 50px;
-  background: none;
-  overflow: hidden;
 }
 
-/* Background image in slide */
 .container img {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh; /* Set height to full viewport height */
+  height: 100vh;
   object-fit: cover;
-  object-position: center;
   z-index: -1;
 }
 
-/* Text on slides */
 .home-text {
   color: white;
   max-width: 400px;
   z-index: 10;
-  text-align: left;
 }
 
 .home-text .btn {
   margin-top: 15px;
-  display: inline-block;
 }
+
 /* Footer styling */
 footer {
   position: fixed;
@@ -152,18 +194,4 @@ footer {
   display: flex;
   align-items: center;
   box-shadow: 0 -2px 5px rgb(8, 8, 8);
-  z-index: 1001;
-}
-
-footer .copyright {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-footer .copyright i {
-  font-style: normal; /* We'll use the symbol directly */
-  font-weight: bold;
-  font-size: 16px;
-  color: white;
 }

@@ -25,16 +25,18 @@
   <body>
     <!-- Navbar -->
     <header>
-      <a href="#" class="logo"><i class="bx bxs-movie"></i> FREELIX</a>
+      <a href="{% url 'login' %}" class="logo"
+        ><i class="bx bxs-movie"></i> FREELIX</a
+      >
 
       <ul class="navbar">
         <li><a href="{% url 'login' %}">Home</a></li>
-
         <li><a href="{% url 'login' %}">Movies</a></li>
         <li><a href="{% url 'login' %}">TV Series</a></li>
-        <li><a href="{% url 'login' %}">Newsletter</a></li>
       </ul>
-      <a href="{% url 'login' %}" class="btn">SIGN IN</a>
+      <div class="right-section">
+        <a href="{% url 'login' %}" class="btn">SIGN IN</a>
+      </div>
     </header>
 
     <!-- Home Section with Swiper -->
