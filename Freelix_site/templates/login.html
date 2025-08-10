@@ -6,13 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>FREELIX Login</title>
     <link rel="stylesheet" href="{% static 'assets/login.css' %}" />
+    <!-- Font Awesome for Eye Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      .password-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+      .password-container input {
+        width: 100%;
+        padding-right: 40px; /* space for icon */
+      }
+      .toggle-password {
+        position: absolute;
+        right: 10px;
+        cursor: pointer;
+        background: none;
+        border: none;
+        font-size: 18px;
+        color: #555;
+        transition: color 0.2s ease;
+      }
+      .toggle-password:hover {
+        color: #000; /* darker on hover */
+      }
+    </style>
   </head>
   <body>
     <div class="login-container">
       <h1 class="site-name">FREELIX</h1>
       <div>
         {% for message in messages %}
-        <h5 style="color: red; ">{{message}}</h5>
+        <h5 style="color: red">{{message}}</h5>
         {% endfor %}
       </div>
       <form
@@ -24,32 +54,64 @@
         {% csrf_token %}
 
         <label for="username">Username</label>
-        <input type="username" id="id_username" name="username" placeholder="Enter your username" value="{{ request.POST.email|default:'' }}" required/>
+        <input
+          type="username"
+          id="id_username"
+          name="username"
+          placeholder="Enter your username"
+          value="{{ request.POST.email|default:'' }}"
+          required
+        />
         {% if form.email.errors %}
         <div class="error">{{ form.email.errors.0 }}</div>
         {% endif %}
 
         <label for="id_password">Password</label>
-        <input
-          type="password"
-          id="id_password"
-          .
-          name="password"
-          placeholder="Enter password (min 8 chars)"
-          minlength="8"
-          required
-        />
+        <div class="password-container">
+          <input
+            type="password"
+            id="id_password"
+            name="password"
+            placeholder="Enter password (min 8 chars)"
+            minlength="8"
+            required
+          />
+          <button
+            type="button"
+            class="toggle-password"
+            onclick="togglePassword()"
+          >
+            <i id="eye-icon" class="fa-solid fa-eye"></i>
+          </button>
+        </div>
         {% if form.password.errors %}
         <div class="error">{{ form.password.errors.0 }}</div>
         {% endif %}
+
         <button type="submit" class="btn-signin">Sign In</button>
 
         <p class="signup-text">
-          New Member?<a href="{% url 'signup' %}" class="signup-link"
-            >Sign Up</a
-          >
+          New Member?
+          <a href="{% url 'signup' %}" class="signup-link">Sign Up</a>
         </p>
       </form>
     </div>
+
+    <script>
+      function togglePassword() {
+        const passwordInput = document.getElementById("id_password");
+        const eyeIcon = document.getElementById("eye-icon");
+
+        if (passwordInput.type === "password") {
+          passwordInput.type = "text";
+          eyeIcon.classList.remove("fa-eye");
+          eyeIcon.classList.add("fa-eye-slash");
+        } else {
+          passwordInput.type = "password";
+          eyeIcon.classList.remove("fa-eye-slash");
+          eyeIcon.classList.add("fa-eye");
+        }
+      }
+    </script>
   </body>
 </html>

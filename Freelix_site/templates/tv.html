@@ -4,12 +4,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>All TV SHOWS</title>
+    <title>All Movies</title>
     <link rel="stylesheet" href="{% static 'assets/movies.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
   </head>
   <body>
     <header>
-      <h1>All TV SHOWS</h1>
+      <h1>All TV Shows</h1>
+
+      <!-- Search Bar -->
+      <div class="search-container">
+        <input type="text" placeholder="Search movies..." />
+        <button id="search-btn"><i class="fas fa-search"></i></button>
+      </div>
     </header>
 
     <main class="movies-container">

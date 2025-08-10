@@ -71,12 +71,14 @@ body {
 .login-form input:focus {
   box-shadow: 0 0 6px #e74c3c;
 }
+
 /* Signup text */
 .signup-text {
   margin-top: 15px;
   font-size: 0.95rem;
   color: #fff;
 }
+
 .signup-link {
   color: #e74c3c;
   text-decoration: none;
@@ -85,4 +87,54 @@ body {
 
 .signup-link:hover {
   text-decoration: underline;
+}
+
+/* Password container with eye icon */
+.password-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-container input {
+  width: 100%;
+  padding-right: 35px; /* space for eye icon inside */
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 14px; /* smaller eye */
+  color: #aaa;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.toggle-password:hover {
+  color: #fff;
+  transform: translateY(-50%) scale(1.1); /* slight pop effect */
+}
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-wrapper input {
+  width: 100%;
+  padding-right: 35px;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 1.2em;
+}
+
+.toggle-password:hover {
+  color: #000;
 }

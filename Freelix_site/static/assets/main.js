@@ -28,3 +28,38 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+document.addEventListener("DOMContentLoaded", function () {
+  const passwordInput = document.getElementById("id_password");
+  const eyeIcon = document.getElementById("eye-icon");
+
+  eyeIcon.addEventListener("click", function () {
+    if (passwordInput.type === "password") {
+      passwordInput.type = "text";
+      eyeIcon.classList.remove("fa-eye");
+      eyeIcon.classList.add("fa-eye-slash");
+    } else {
+      passwordInput.type = "password";
+      eyeIcon.classList.remove("fa-eye-slash");
+      eyeIcon.classList.add("fa-eye");
+    }
+  });
+});
+function togglePassword() {
+  const passwordInput = document.getElementById("id_password");
+  const eyeIcon = document.getElementById("eye-icon");
+
+  if (passwordInput.type === "password") {
+    passwordInput.type = "text";
+    eyeIcon.classList.remove("fa-eye");
+    eyeIcon.classList.add("fa-eye-slash");
+  } else {
+    passwordInput.type = "password";
+    eyeIcon.classList.remove("fa-eye-slash");
+    eyeIcon.classList.add("fa-eye");
+  }
+}
+// Example search handler
+document.querySelector('.search-container button').addEventListener('click', () => {
+  let query = document.querySelector('.search-container input').value;
+  alert("Searching for: " + query);
+});
