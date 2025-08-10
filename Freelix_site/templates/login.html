@@ -10,6 +10,11 @@
   <body>
     <div class="login-container">
       <h1 class="site-name">FREELIX</h1>
+      <div>
+        {% for message in messages %}
+        <h5 style="color: red; ">{{message}}</h5>
+        {% endfor %}
+      </div>
       <form
         method="post"
         action="{% url 'login' %}"
@@ -19,14 +24,7 @@
         {% csrf_token %}
 
         <label for="username">Username</label>
-        <input
-          type="username"
-          id="id_username"
-          name="username"
-          placeholder="Enter your username"
-          value="{{ request.POST.email|default:'' }}"
-          required
-        />
+        <input type="username" id="id_username" name="username" placeholder="Enter your username" value="{{ request.POST.email|default:'' }}" required/>
         {% if form.email.errors %}
         <div class="error">{{ form.email.errors.0 }}</div>
         {% endif %}
