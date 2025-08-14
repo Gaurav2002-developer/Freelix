@@ -1,0 +1,140 @@
+/* Background with full cover */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: url("https://wallpapers.com/images/hd/movie-poster-background-p5qblffj7cvswl5g.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container box */
+.login-container {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  width: 320px;
+  text-align: center;
+  color: white;
+}
+
+/* Site name */
+.site-name {
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  letter-spacing: 3px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Form elements */
+.login-form label {
+  display: block;
+  text-align: left;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+}
+
+/* Sign-in button */
+.btn-signin {
+  background-color: #e74c3c; /* bright red */
+  color: white;
+  border: none;
+  padding: 12px 0;
+  width: 100%;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-signin:hover {
+  background-color: #c0392b; /* darker red on hover */
+}
+
+/* Input focus */
+.login-form input:focus {
+  box-shadow: 0 0 6px #e74c3c;
+}
+
+/* Signup text */
+.signup-text {
+  margin-top: 15px;
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+.signup-link {
+  color: #e74c3c;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signup-link:hover {
+  text-decoration: underline;
+}
+
+/* Password container with eye icon */
+.password-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-container input {
+  width: 100%;
+  padding-right: 35px; /* space for eye icon inside */
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 14px; /* smaller eye */
+  color: #aaa;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.toggle-password:hover {
+  color: #fff;
+  transform: translateY(-50%) scale(1.1); /* slight pop effect */
+}
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-wrapper input {
+  width: 100%;
+  padding-right: 35px;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 1.2em;
+}
+
+.toggle-password:hover {
+  color: #000;
+}

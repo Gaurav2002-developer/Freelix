@@ -25,17 +25,27 @@
   <body>
     <!-- Navbar -->
     <header>
-      <a href="{% url 'login' %}" class="logo"
+      <a href="{% url 'home' %}" class="logo"
         ><i class="bx bxs-movie"></i> FREELIX</a
       >
 
       <ul class="navbar">
-        <li><a href="{% url 'login' %}">Home</a></li>
-        <li><a href="{% url 'login' %}">Movies</a></li>
-        <li><a href="{% url 'login' %}">TV Series</a></li>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'movies' %}">Movies</a></li>
+        <li><a href="{% url 'tv' %}">TV Series</a></li>
       </ul>
+
       <div class="right-section">
-        <a href="{% url 'login' %}" class="btn">SIGN IN</a>
+        <a href="#" class="logo">
+          <i class="bx bx-search"></i>
+        </a>
+
+        <div class="search-container">
+          <div class="search-box">
+            <input type="text" placeholder="Search..." class="search-input" />
+          </div>
+        </div>
+        <a href="{% url 'profile' %}" class="btn">MY ACCOUNT</a>
       </div>
     </header>
 

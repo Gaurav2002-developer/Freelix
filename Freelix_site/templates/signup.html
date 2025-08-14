@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FREELIX Sign Up</title>
+    <link rel="stylesheet" href="{% static 'assets/login.css' %}" />
+    <script defer src="{% static 'assets/password.js' %}"></script>
+  </head>
+  <body>
+    <div class="login-container">
+      <h1 class="site-name">FREELIX</h1>
+
+      <div>
+        {% for message in messages %}
+        <h5 style="color: red">{{ message }}</h5>
+        {% endfor %}
+      </div>
+
+      <form
+        method="post"
+        action="{% url 'signup' %}"
+        class="login-form"
+        novalidate
+      >
+        {% csrf_token %}
+
+        <input type="text" name="fullname" placeholder="Full Name" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="text" name="username" placeholder="Username" required />
+
+        <div class="password-wrapper">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Password"
+            required
+          />
+        </div>
+
+        <div class="password-wrapper">
+          <input
+            type="password"
+            id="confirm-password"
+            name="confirm_password"
+            placeholder="Re-enter Password"
+            required
+          />
+          <span class="toggle-password" data-target="confirm-password">👁</span>
+        </div>
+
+        <button type="submit" class="btn-signin">Sign Up</button>
+
+        <p class="signup-text">
+          Already have an account?
+          <a href="{% url 'login' %}" class="signup-link">Sign In</a>
+        </p>
+      </form>
+    </div>
+  </body>
+</html>

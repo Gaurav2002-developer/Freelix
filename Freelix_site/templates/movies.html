@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Movies</title>
+    <link rel="stylesheet" href="{% static 'assets/movies.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>All Movies</h1>
+
+      <!-- Search Bar -->
+      <div class="search-container">
+        <input type="text" placeholder="Search movies..." />
+        <button id="search-btn"><i class="fas fa-search"></i></button>
+      </div>
+    </header>
+
+    <main class="movies-container">
+      <!-- Movie Card 1 -->
+      <div class="movie-card">
+        <div class="poster">
+          <img
+            src="https://m.media-amazon.com/images/M/MV5BMDg2YzI0ODctYjliMy00NTU0LTkxODYtYTNkNjQwMzVmOTcxXkEyXkFqcGdeQXVyNjg2NjQwMDQ@._V1_SY1000_CR0,0,648,1000_AL_.jpg"
+            alt="Movie 1"
+          />
+          <a href="{% url 'movie_detail' 1 %}" class="play-btn">▶ Play</a>
+        </div>
+        <h3>John Wick: Chapter 3 - Parabellum</h3>
+        <p>2h 11m</p>
+      </div>
+
+      <!-- Movie Card 2 -->
+      <div class="movie-card">
+        <div class="poster">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX56eHp0d0WdvFlrpJJuxhP8A3pYgCSnyUp0AKuwcNGAYtioKcAz4WgkpChsaEDr6fWQa8"
+            alt="Movie 2"
+          />
+          <a href="{% url 'movie_detail' 2 %}" class="play-btn">▶ Play</a>
+        </div>
+        <h3>Zack Snyder's Justice League</h3>
+        <p>4h 2m</p>
+      </div>
+
+      <!-- Movie Card 3 -->
+      <div class="movie-card">
+        <div class="poster">
+          <img
+            src="https://m.media-amazon.com/images/I/71fE+sq+IYL._UF894,1000_QL80_.jpg"
+            alt="Movie 3"
+          />
+          <a href="{% url 'movie_detail' 3 %}" class="play-btn">▶ Play</a>
+        </div>
+        <h3>Mission: Impossible - Fallout</h3>
+        <p>2h 45m</p>
+      </div>
+    </main>
+
+    <script src="{% static 'assets/main.js' %}"></script>
+  </body>
+</html>

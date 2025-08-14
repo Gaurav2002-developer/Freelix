@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Movies</title>
+    <link rel="stylesheet" href="{% static 'assets/movies.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>All TV Shows</h1>
+
+      <!-- Search Bar -->
+      <div class="search-container">
+        <input type="text" placeholder="Search movies..." />
+        <button id="search-btn"><i class="fas fa-search"></i></button>
+      </div>
+    </header>
+
+    <main class="movies-container">
+      <!-- Movie Card 1 -->
+      <div class="movie-card">
+        <div class="poster">
+          <img
+            src="https://resizing.flixster.com/aFlnGpyD8kDQFfHsjleVKHSm4qY=/206x305/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p185846_b_v8_ad.jpg"
+            alt="Movie 1"
+          />
+          <a href="{% url 'movie_detail' 1 %}" class="play-btn">▶ Play</a>
+        </div>
+        <h3>Breaking Bad</h3>
+        <p>2008|5 Seasons</p>
+      </div>
+
+      <!-- Movie Card 2 -->
+      <div class="movie-card">
+        <div class="poster">
+          <img
+            src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSczx8CGOIcC2MYrSpMa7WfoCSkOeqkNRDdggds4Eglbwszasu8YowxAEzabZdDnA-43RoGnA"
+            alt="Movie 2"
+          />
+          <a href="{% url 'movie_detail' 2 %}" class="play-btn">▶ Play</a>
+        </div>
+        <h3>Suits</h3>
+        <p>2011|9 Seasons</p>
+      </div>
+
+      <!-- Movie Card 3 -->
+      <div class="movie-card">
+        <div class="poster">
+          <img
+            src="https://lh6.googleusercontent.com/proxy/bOmUUUYphD8sbLIYKFlINs3T1xebzFOhYAfz9oUQQMka08ZBn-otibUS_WORJru7Ny4YKhCE5wmnVa_UM8d7jJ5LT_Ez852C9vjJ"
+            alt="Movie 3"
+          />
+          <a href="{% url 'movie_detail' 3 %}" class="play-btn">▶ Play</a>
+        </div>
+        <h3>The Last Of Us</h3>
+        <p>2023|2 Seasons</p>
+      </div>
+    </main>
+
+    <script src="{% static 'assets/movies.js' %}"></script>
+  </body>
+</html>
