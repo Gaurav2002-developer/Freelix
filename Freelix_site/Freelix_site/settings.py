@@ -76,8 +76,15 @@ WSGI_APPLICATION = 'Freelix_site.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'myprojectuser',
+        'PASSWORD': 'djangodatabase',
+        'HOST': 'localhost',  # or your server IP
+        'PORT': '5430',
+        'OPTIONS' : {
+            'options': '-c search_path=myschema' 
+        } # Use 'require' for SSL connections
     }
 }
 
