@@ -1,61 +1,18 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Movie Player</title>
-    <link rel="stylesheet" href="{% static 'assets/player.css' %}" />
-  </head>
-  <body>
-    <div class="player-container">
-      <video id="movie" class="movie" controls poster="poster.jpg">
-        <source src="movie.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-
-      <!-- Custom Controls -->
-      <div class="controls">
-        <button id="playBtn">⏯️</button>
-        <input type="range" id="progress" value="0" max="100" />
-        <input type="range" id="volume" min="0" max="1" step="0.05" value="1" />
-        <button id="fullscreen">⛶</button>
-      </div>
-    </div>
-
-    <script>
-      const movie = document.getElementById("movie");
-      const playBtn = document.getElementById("playBtn");
-      const progress = document.getElementById("progress");
-      const volume = document.getElementById("volume");
-      const fullscreen = document.getElementById("fullscreen");
-
-      playBtn.addEventListener("click", () => {
-        if (movie.paused) {
-          movie.play();
-          playBtn.textContent = "⏸️";
-        } else {
-          movie.pause();
-          playBtn.textContent = "▶️";
-        }
-      });
-
-      movie.addEventListener("timeupdate", () => {
-        progress.value = (movie.currentTime / movie.duration) * 100;
-      });
-
-      progress.addEventListener("input", () => {
-        movie.currentTime = (progress.value / 100) * movie.duration;
-      });
-
-      volume.addEventListener("input", () => {
-        movie.volume = volume.value;
-      });
-
-      fullscreen.addEventListener("click", () => {
-        if (movie.requestFullscreen) {
-          movie.requestFullscreen();
-        }
-      });
-    </script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Player</title>
+  <link rel="stylesheet" href="{% static 'assets/player.css' %}">
+</head>
+<body>
+  <div class="player-container">
+    <video id="movie" class="movie" controls poster="{% static 'assets/johnwick-poster.jpg' %}">
+      <source src="{% static 'assets/johnwick.mp4' %}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</body>
 </html>
