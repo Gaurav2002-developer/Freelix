@@ -20,7 +20,10 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 15px 30px;
+  font-size: small;
 }
+
+
 
 .logo {
   font-size: 22px;

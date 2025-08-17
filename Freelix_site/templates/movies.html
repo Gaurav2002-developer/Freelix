@@ -13,7 +13,7 @@
   </head>
   <body>
     <header>
-      <h1>All Movies</h1>
+      <h1>Popular On Freelix</h1>
 
       <!-- Search Bar -->
       <div class="search-container">
@@ -24,20 +24,23 @@
 
     <main class="movies-container">
       <!-- Movie Card 1 -->
+      {% for movie in movies %}
       <div class="movie-card">
         <div class="poster">
           <img
-            src="https://m.media-amazon.com/images/M/MV5BMDg2YzI0ODctYjliMy00NTU0LTkxODYtYTNkNjQwMzVmOTcxXkEyXkFqcGdeQXVyNjg2NjQwMDQ@._V1_SY1000_CR0,0,648,1000_AL_.jpg"
+            src="{{movie.image_card.url}}"
             alt="Movie 1"
           />
           <a href="{% url 'movie_detail' 1 %}" class="play-btn">▶ Play</a>
         </div>
-        <h3>John Wick: Chapter 3 - Parabellum</h3>
-        <p>2h 11m</p>
+        
+        <h3>{{movie.title}}</h3>
+        
+        <p>{{movie.length}} min</p>
       </div>
-
+      {% endfor %}
       <!-- Movie Card 2 -->
-      <div class="movie-card">
+      <!-- <div class="movie-card">
         <div class="poster">
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX56eHp0d0WdvFlrpJJuxhP8A3pYgCSnyUp0AKuwcNGAYtioKcAz4WgkpChsaEDr6fWQa8"
@@ -47,10 +50,10 @@
         </div>
         <h3>Zack Snyder's Justice League</h3>
         <p>4h 2m</p>
-      </div>
+      </div> -->
 
       <!-- Movie Card 3 -->
-      <div class="movie-card">
+      <!-- <div class="movie-card">
         <div class="poster">
           <img
             src="https://m.media-amazon.com/images/I/71fE+sq+IYL._UF894,1000_QL80_.jpg"
@@ -60,7 +63,7 @@
         </div>
         <h3>Mission: Impossible - Fallout</h3>
         <p>2h 45m</p>
-      </div>
+      </div> -->
     </main>
 
     <script src="{% static 'assets/main.js' %}"></script>

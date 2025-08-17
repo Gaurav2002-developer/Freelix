@@ -1,8 +1,11 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
+from .models import Movies
+
 
 def index(request):
+   
     return render(request, "index.html")
 
 def login(request):
@@ -55,13 +58,18 @@ def signup(request):
         return render(request, 'signup.html')   
 
 def home(request):
+    
     return render(request, 'home.html')
 
 def profile(request):
     return render(request, 'profile.html')
 
 def movies(request):
-    return render(request, 'movies.html')
+    movies = Movies.objects.all()
+    context = {
+        'movies' : movies,
+    }
+    return render(request, 'movies.html', context)
 
 def movie_detail(request, movie_id):
     return render(request, 'movie_detail.html', {'movie_id': movie_id})

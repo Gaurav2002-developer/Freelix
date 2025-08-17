@@ -6,7 +6,8 @@ class Movies(models.Model):
         ('action', 'Action'),
         ('comdedy', 'Comedy'),
         ('drama', 'Drama'),
-        ('horror','Horror')
+        ('horror','Horror'),
+        ('romance', 'Romance')
 
     ]
 
