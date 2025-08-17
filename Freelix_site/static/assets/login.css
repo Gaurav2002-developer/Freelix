@@ -51,7 +51,7 @@ body {
 
 /* Sign-in button */
 .btn-signin {
-  background-color: #e74c3c; /* bright red */
+  background-color: #c85249; /* bright red */
   color: white;
   border: none;
   padding: 12px 0;
@@ -80,7 +80,7 @@ body {
 }
 
 .signup-link {
-  color: #e74c3c;
+  color: #cb4747;
   text-decoration: none;
   font-weight: bold;
 }

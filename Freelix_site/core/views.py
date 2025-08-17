@@ -69,4 +69,7 @@ def movie_detail(request, movie_id):
 def tv(request):
     return render(request, 'tv.html')
 
+def player(request):
+    return render(request, 'player.html')
+
 # Create your views here.

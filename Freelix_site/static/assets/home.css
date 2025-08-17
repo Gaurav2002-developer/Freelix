@@ -187,11 +187,11 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: rgba(2, 2, 2, 0.363);
+  background: rgba(2, 2, 2, 0.026);
   color: white;
   padding: 12px 30px;
   font-size: 14px;
   display: flex;
   align-items: center;
-  box-shadow: 0 -2px 5px rgb(8, 8, 8);
+  box-shadow: 0 -2px 5px rgba(8, 8, 8, 0.467);
 }
