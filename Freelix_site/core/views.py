@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from .models import Movies
+from django.contrib.auth.decorators import login_required
+
 
 
 def index(request):
@@ -71,10 +73,20 @@ def movies(request):
     }
     return render(request, 'movies.html', context)
 
-def movie_detail(request, movie_id):
-    return render(request, 'movie_detail.html', {'movie_id': movie_id})
 
+@login_required(login_url='login')
+def movie_detail(request, pk):
+    movie_uuid = pk
+    movie_detail = Movies.objects.get(uu_id=movie_uuid)
+
+    context = {
+        'movie_detail': movie_detail
+    }
+    return render(request, 'movie_detail.html', context)
 def tv(request):
     return render(request, 'tv.html')
 
+@login_required(login_url='login')
+def search(request):
+    return render(request, 'search.html')
 # Create your views here.
